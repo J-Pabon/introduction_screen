@@ -471,6 +471,11 @@ class IntroductionScreenState extends State<IntroductionScreen> {
   Future<void> _movePage(Duration autoscrollDuration,
       Duration animationDuration, bool forward) async {
     await Future.delayed(autoscrollDuration);
+
+    if (!mounted) {
+      return;
+    }
+    
     if (!_isSkipPressed && !_isScrolling) {
       if (forward) {
         await _pageController.nextPage(
