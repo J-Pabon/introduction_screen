@@ -473,7 +473,7 @@ class IntroductionScreenState extends State<IntroductionScreen> {
     await Future.delayed(autoscrollDuration);
 
     if (!mounted) {
-      break;
+      return;
     }
     
     if (!_isSkipPressed && !_isScrolling) {
